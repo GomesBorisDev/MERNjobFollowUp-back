@@ -8,14 +8,14 @@ exports.createApplication = (req, res, next) => {
     email: req.body.email,
     website: req.body.website,
     linkedin: req.body.linkedin,
-    comment: req.body.comment
-    // userId: req.body.userId
+    comment: req.body.comment,
+    addedAt: req.body.addedAt
   });
   
   application.save().then(
     () => {
       res.status(201).json({
-        message: 'Post saved successfully!'
+        message: 'Saved successfully!'
       });
     }
   ).catch(
@@ -52,12 +52,12 @@ exports.updateApplication = (req, res, next) => {
     email: req.body.email,
     website: req.body.website,
     linkedin: req.body.linkedin,
-    linkedin: req.body.comment
+    comment: req.body.comment
   });
   Application.updateOne({_id: req.params.id}, application).then(
     () => {
       res.status(201).json({
-        message: 'Thing updated successfully!'
+        message: 'Updated successfully!'
       });
     }
   ).catch(

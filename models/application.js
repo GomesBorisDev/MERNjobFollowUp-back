@@ -8,8 +8,7 @@ const appsSchema = mongoose.Schema({
   website: { type: Boolean, required: true },
   linkedin: { type: Boolean, required: true },
   comment: { type: String, required: true },
-  // addedAt: { type: Date, required: true },
-  // userId: { type: String, required: true }
+  addedAt: { type: Date, required: true }
 });
 
 module.exports = mongoose.model('Application', appsSchema);
